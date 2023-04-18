@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .input{
+            margin:20px 0;
+            width:460px;
+            height:40px;
+        }
+        .input>label{
+            display:inline-block;
+            width:140px;
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>用户注册</h1>
+        <p class="hint">{{ hint }}</p>
+        <form action="/register/" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>用户信息</legend>
+                <div class="input">
+                    <label>用户名</label>
+                    <input type="text" name="username">
+                </div>
+                <div class="input">
+                    <label>密码</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="input">
+                    <label>确认密码</label>
+                    <input type="password" name="password_1">
+                </div>
+                <div class="input">
+                    <label>验证码</label>
+                    <input type="text" name="captcha">
+                    <img id="code" src="/captcha/" alt="" width="150" height="40">
+                </div>
+            </fieldset>
+            <div class="button">
+                <input type="submit" name="注册" >
+                <a href="/">返回首页</a>
+            </div>
+        </form>
+        <div id="submit">注册1</div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!--<script>-->
+
+        <!--$(() => {-->
+            <!--$('#submit').click(function(){-->
+                <!--window.location.href = '/login/'-->
+                <!--&lt;!&ndash;$.get('/login/',function(data){&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;$('.container').load(data)&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;window.location.href = '/login/'&ndash;&gt;-->
+                <!--&lt;!&ndash;})&ndash;&gt;-->
+            <!--})-->
+        <!--})-->
+    <!--</script>-->
+</body>
+</html>
